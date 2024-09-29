@@ -75,7 +75,6 @@ fn csv2sh(csv: &str) -> Result<String> {
         match record.0.to_lowercase().as_str() {
             "commit" => {
                 let arg1 = record.1.unwrap();
-                println!("{}", arg1);
                 let date = NaiveDateTime::parse_from_str(&arg1, "%Y/%m/%d %H:%M:%S")
                     .unwrap()
                     .format("%Y-%m-%dT%H:%M:%S")
